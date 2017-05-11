@@ -1,0 +1,171 @@
+@font-face {
+  font-family: 'GothamPro-Black';
+  src: url('fonts/GothamPro-Black/GothamPro-Black.eot?') format('eot'),
+  url('fonts/GothamPro-Black/GothamPro-Black.otf') format('opentype'),
+  url('fonts/GothamPro-Black/GothamPro-Black.woff') format('woff'),
+  url('fonts/GothamPro-Black/GothamPro-Black.ttf') format('truetype'),
+  url('fonts/GothamPro-Black/GothamPro-Black.svg#GothamPro-Black') format('svg');
+}
+
+@font-face {
+  font-family: 'GothamPro-Medium';
+  src: url('fonts/GothamPro-Medium/GothamPro-Medium.eot?') format('eot'),
+  url('fonts/GothamPro-Medium/GothamPro-Medium.otf') format('opentype'),
+  url('fonts/GothamPro-Medium/GothamPro-Medium.woff') format('woff'),
+  url('fonts/GothamPro-Medium/GothamPro-Medium.ttf') format('truetype'),
+  url('fonts/GothamPro-Medium/GothamPro-Medium.svg#GothamPro-Medium') format('svg');
+}
+
+$COLOR_RED: #ec2809;
+$COLOR_GREY: #8f807d;
+$COLOR_GREEN: #27b007;
+$BORDER_COLOR: #242424;
+$BORDER_HOVER: #897a78;
+
+@mixin background_size($width: cover, $height: false, $important: false) {
+  @if ($important){
+    -webkit-background-size: $width $height!important;
+    -moz-background-size: $width $height!important;
+    -o-background-size: $width $height!important;
+    background-size: $width $height!important;
+  } @else {
+    @if ($height) {
+      -webkit-background-size: $width $height;
+      -moz-background-size: $width $height;
+      -o-background-size: $width $height;
+      background-size: $width $height;
+    } @else {
+      -webkit-background-size: $width;
+      -moz-background-size: $width;
+      -o-background-size: $width;
+      background-size: $width;
+    }
+  }
+}
+
+@mixin animated($prop: 150ms) {
+  -webkit-transition: all $prop cubic-bezier(0.000, 0.500, 0.500, 1.000);
+  -moz-transition: all $prop cubic-bezier(0.000, 0.500, 0.500, 1.000);
+  -ms-transition: all $prop cubic-bezier(0.000, 0.500, 0.500, 1.000);
+  -o-transition: all $prop cubic-bezier(0.000, 0.500, 0.500, 1.000);
+  transition: all $prop cubic-bezier(0.000, 0.500, 0.500, 1.000);
+
+  -webkit-transition-timing-function: cubic-bezier(0.000, 0.500, 0.500, 1.000);
+  -moz-transition-timing-function: cubic-bezier(0.000, 0.500, 0.500, 1.000);
+  -ms-transition-timing-function: cubic-bezier(0.000, 0.500, 0.500, 1.000);
+  -o-transition-timing-function: cubic-bezier(0.000, 0.500, 0.500, 1.000);
+  transition-timing-function: cubic-bezier(0.000, 0.500, 0.500, 1.000);
+}
+
+@mixin animated_delay($prop: 100ms) {
+  -webkit-transition-delay: $prop;
+  -o-transition-delay: $prop;
+  -moz-transition-delay: $prop;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  -moz-opacity: .90;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin border_radius($value) {
+  border-radius: $value;
+  -webkit-border-radius: $value;
+  -moz-border-radius: $value;
+}
+
+@mixin image-2x($image, $width, $height, $important: false) {
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min--moz-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
+    @if ($important) {
+      background-image: url($image) !important;
+    } @else {
+      background: url($image) 50% 50% no-repeat;
+    }
+    @include background_size($width, $height);
+  }
+}
+
+body {
+  font-family: 'GothamPro-Medium' !important;
+  margin: 0;
+  color: #fff;
+  background-color: #000;
+}
+
+input {
+  width: 100%;
+  margin-top: 18px;
+  border: 2px solid $BORDER_COLOR;
+  @include border_radius(1px);
+  background: #000;
+  padding: 15px;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 16px;
+  &:hover {
+    border-color: $BORDER_HOVER;
+  }
+  &:focus {
+    background: #fff;
+    color: #000;
+    outline: none;
+  }
+  &.warning {
+    background: #000;
+    color: $COLOR_RED;
+    border-color: $COLOR_RED;
+    &:hover {
+      border-color: $COLOR_RED;
+    }
+  }
+}
+
+@media screen and (max-device-height: 600px) {
+  header {
+    margin-top: 20px;
+  }
+}
+
+.span48 {
+  font-size: 48px;
+}
+
+.span36 {
+  font-size: 36px;
+}
+
+.span22 {
+  font-size: 22px;
+}
+
+.span16 {
+  font-size: 16px;
+}
+
+.btn {
+  background: $COLOR_RED;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  @include border_radius(4px);
+  display: inline-block;
+  padding: 0 35px;
+  line-height: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  cursor: pointer;
+  white-space: nowrap;
+  &:hover {
+    background: #c82106;
+  }
+  &:active {
+    background: #f35d46;
+  }
+}
