@@ -7,7 +7,7 @@ use Yii;
         <img src="/img/letter/btcstat.png" style="float:left;display: inline-block;margin-top: 10px"/>
         <a href="mailto:info@btcstat.net" style="text-decoration: none;color:#ec2809;float:right;display: inline-block">info@btcstat.net</a>
     </div>
-    <p style="padding-top: 30px">Детальная финансовая модель на производство Bitcoin</p>
+    <p style="padding-top: 30px">Detailed financial model for production of Bitcoin</p>
     <table style="width: 100%">
         <tr>
             <td style="width: 60%">
@@ -19,12 +19,12 @@ use Yii;
                                     <td style="border-right: 4px solid #eaeced;display: inline-block;padding: 10px 30px;text-align: center;width: 200px;">
                                         <p
                                                 style="margin: 0; padding: 0 0 10px 0;">
-                                            Период</p><span
-                                                style="font-weight: 700;font-size: 30px;">3 года</span></td>
-                                    <td style="display: inline-block;padding: 10px 30px;text-align: center;width: 200px">
+                                            Period</p><span
+                                                style="font-weight: 700;font-size: 30px;">3 years</span></td>
+                                    <td style="display: inline-block;padding: 10px 30px;text-align: center;width: 250px">
                                         <p
-                                                style="margin: 0; padding: 0 0 10px 0;">Инвестиции</p>
-                                        <span style="font-weight: 700;font-size: 30px;"><?= number_format(
+                                                style="margin: 0; padding: 0 0 10px 0;">Investments</p>
+                                        <span style="font-weight: 700;font-size: 30px;white-space: nowrap"><?= number_format(
                                                 $invest, 0, '.', ',') ?>
                                             usd</span></td>
                                 </tr>
@@ -33,18 +33,16 @@ use Yii;
                     </tr>
                     <tr>
                         <td colspan="2" style="padding-top:30px">
-                            <p style="line-height: 24px">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                                do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                ullamco.</p>
+                            <p style="line-height: 24px">All calculations were made according to the characteristics of
+                                T9 Units. If you are interested in other options of the equipment, please write us here:
+                                <a href="mailto:info@btcstat.net">info@btcstat.net</a>
+                            </p>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2"
-                            style="line-height:24px; color:#999999;padding-top: 9cm;background: url(/img/letter/proc.png) no-repeat 0 7.7cm;padding-left: 60px">
-                            Информация про оборудование которое будет использоваться для
-                            производства и указание возможности заказать расчёт исходя из
-                            пожеланий клиента
+                            style="line-height:24px; color:#999999;padding-top: 9cm;padding-left: 60px">
+
                         </td>
                     </tr>
                 </table>
@@ -170,17 +168,17 @@ use Yii;
                         $item[4] - $server->managementFee * 0.01 * $inv / 12, 0, '.', ',') ?></td>
                 <td><?= number_format(-$invest + $cf, 0, '.', ',') ?></td>
                 <td><?= number_format($cf, 0, '.', ',') ?></td>
-                <td><?= number_format($cf*100/$inv, 0, '.', ',') ?>%</td>
+                <td><?= number_format($cf * 100 / $inv, 0, '.', ',') ?>%</td>
             </tr>
         <?php endforeach; ?>
         </tbody>
         <tfoot>
         <tr>
             <th>Total 3 years</th>
-            <th><?=number_format($bitcoins, 7, '.', ',')?></th>
+            <th><?= number_format($bitcoins, 7, '.', ',') ?></th>
             <th></th>
             <th></th>
-            <th><?=number_format($profit, 0, '.', ',')?></th>
+            <th><?= number_format($profit, 0, '.', ',') ?></th>
         </tr>
         </tfoot>
     </table>

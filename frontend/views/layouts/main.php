@@ -15,7 +15,7 @@ AppAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta name="title" content="" />
+    <meta name="title" content="<?= Html::encode($this->title) ?>" />
     <meta name="description" content="" />
     <link rel="image_src" href="http://btcstat.net/img/fav.png" />
     <link rel="icon" type="image/png" href="http://btcstat.net/img/fav.png" />

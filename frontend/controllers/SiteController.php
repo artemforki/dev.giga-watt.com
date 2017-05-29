@@ -43,6 +43,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $this->view->title = 'Would you like to know how much BITCOIN is really worth?';
         $groups = Yii::$app->calculator->getCurrencyGroup()['group'];
         $sort = array_map(
             function ($item) {

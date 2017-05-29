@@ -77,7 +77,7 @@
     </section>
     <section class="block">
         <span class="title"><span class="title_num">3. </span>You can mine Bitcoin with </span>
-        <a class="title_with_logo" href="https://giga-watt.com"></a>
+        <a class="title_with_logo" href="https://cryptonomos.com/wtt/"></a>
         <span class="block_equal big"><div>1 btc</div><span>&nbsp;</span><b id="self_server_result_usd"><?= $rate ?> usd</b></span>
         <div class="block_result">
             <span class="block_result_num span36<?= $profit < 100 ? ' digit2' : '' ?>"
@@ -136,9 +136,9 @@
         </div>
     </section>
     <section class="about">
-        <a class="about_logo" href="https://giga-watt.com"></a>
+        <a class="about_logo" href="https://cryptonomos.com/wtt/"></a>
         <span class="about_text">See details at</span>
-        <a class="about_site" href="https://giga-watt.com">giga-watt.com</a>
+        <a class="about_site" href="https://cryptonomos.com/wtt/">cryptonomos.com</a>
     </section>
 </div>
 <?php

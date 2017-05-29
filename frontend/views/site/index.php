@@ -135,9 +135,9 @@
         </div>
     </section>
     <section class="about">
-        <a class="about_logo" href="https://giga-watt.com"></a>
+        <a class="about_logo" href="https://cryptonomos.com/wtt/"></a>
         <span class="about_text">See details at</span>
-        <a class="about_site" href="https://giga-watt.com">giga-watt.com</a>
+        <a class="about_site" href="https://cryptonomos.com/wtt/">cryptonomos.com</a>
     </section>
 </div>
 <?php
