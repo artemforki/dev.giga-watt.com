@@ -83,6 +83,10 @@ class Calculator extends Component
         return $data;
     }
 
+    public function getDifficulty(){
+        return static::getVolume();
+    }
+
     public static function getVolume()
     {
         $key = md5('Bitcoin Difficulty');

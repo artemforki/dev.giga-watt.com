@@ -4,7 +4,7 @@
         <span class="screen-0_text_animated t1 span48 __animated">Would you like to know how much</span>
         <span class="screen-0_text_animated t2 __animated">BITCOIN</span>
         <span class="screen-0_text_animated span48 t3 __animated">is really worth?</span>
-        <span class="screen-0_text_animated t4 __animated">YOU WILL BE SHOCKED TO KNOW THE REAL GAIN&nbsp;&nbsp;&nbsp;&nbsp;<b><?= $profit ?>
+        <span class="screen-0_text_animated t4 __animated">YOU WILL BE SHOCKED TO FIND OUT THE REAL GAIN:&nbsp;&nbsp;&nbsp;&nbsp;<b><?= $profit ?>
                 %</b></span>
         <span class="screen-0_text_animated t5 __animated"><div class="btn" id="scroll_down">SHOW PRICES</div></span>
         <span class="screen-0_text_animated t6 __mouse"><span class="__scroll"></span></span>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="block_input">
                     <div class="block_input_title inform-question"
-                         data-hint="Electricity and other hosting costs, kW/h<br/>If you mine at home enter electricity costs only here.">
+                         data-hint="Electricity and other hosting costs, kW/h<br/>In you mine at home, enter electricity costs here.">
                         Cost per KW/h
                     </div>
                     <div class="block_input_box hosting-cent">
@@ -76,7 +76,7 @@
     </section>
     <section class="block">
         <span class="title with_logo"><span class="title_num">3. </span>You can mine Bitcoin with <a
-                    href="https://giga-watt.com"></a></span>
+                    href="https://cryptonomos.com/wtt/"></a></span>
         <span class="block_equal big">1 btc<span>&nbsp;</span><b id="self_server_result_usd"><?= $rate ?></b> usd</span>
         <div class="block_result">
             <span class="block_result_num span36<?= $profit < 100 ? ' digit2' : '' ?>"
@@ -102,7 +102,7 @@
                             <input type="email" value="" type-email name="Client[email]">
                         </div>
                     </div>
-                    <div class="btn" id="btn_order" onclick="Btc.order();">GET YOUR CALCULATION</div>
+                    <div class="btn" id="btn_order" onclick="Btc.order();">GET YOUR CALCULATIONS</div>
                 </form>
             </div>
             <span class="block_inform">Your email address is safe: We will not share it with anybody.</span>
@@ -113,12 +113,12 @@
         <span class="sub-title">GIGA WATT</span>
         <div class="advantages_block">
             <div class="advantages_block_item">
-                <span class="circle span36">2,8с<br/><b class="span22">kw/m</b></span>
+                <span class="circle span36">2.8&cent;<br/><b class="span22">kW/h</b></span>
                 <span class="service span22">Electricity</span>
                 <span class="service_desc span16">Effective elecricity rate</span>
             </div>
             <div class="advantages_block_item">
-                <span class="circle span36">0,5с<br/><b class="span22">kw/mс</b></span>
+                <span class="circle span36">0.5&cent;<br/><b class="span22">kW/h</b></span>
                 <span class="service span22">MAINTENANCE</span>
                 <span class="service_desc span16">Ongoing support</span>
             </div>

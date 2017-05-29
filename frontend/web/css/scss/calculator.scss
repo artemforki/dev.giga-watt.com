@@ -45,7 +45,7 @@ header {
         fill: $COLOR_RED;
         @include background_size();
         top: 276px;
-        right: 53px;
+        right: 30px;
         @include opacity(0);
         @include animated_delay(4500ms);
         &.active {

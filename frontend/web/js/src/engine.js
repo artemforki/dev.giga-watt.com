@@ -140,6 +140,10 @@ var Btc = {
         if (this.check_form(form) !== true) {
             return false;
         }
+        $.post(form.prop('action'), form.serializeArray(), function(result){
+
+        }, 'json');
+
         Btc.lightbox.open({
             src: '<div class="lb_ok"><div class="lb_ok_content"><div class="lb_ok_content_ok"></div>' +
             '<span class="lb_ok_content_send span48">Sent!</span>' +

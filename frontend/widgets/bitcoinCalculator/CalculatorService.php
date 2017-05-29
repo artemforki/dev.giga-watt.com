@@ -16,6 +16,28 @@ abstract class CalculatorService
     public $conversionIncrease = 0;
     public $poolFees = 0;
     public $hostingFees = 0;
+    public $managementFee = 0;
+    public $remainderBook = 0;
+
+    public function getCountServerByInvest($investment)
+    {
+        if ($investment <= $this->price) {
+            return 1;
+        }
+        return floor($investment / $this->price);
+    }
+
+    public function getStatToMonthByInvestment($investment, $monthNumber = 1)
+    {
+        $servers = $this->getCountServerByInvest($investment);
+        return $this->getStatToMonth($servers, $monthNumber);
+    }
+
+    public function getBitcoinCostByInvestment($investment, $monthNumber = 1)
+    {
+        $servers = $this->getCountServerByInvest($investment);
+        return $this->getBitcoinCost($servers, $monthNumber);
+    }
 
     public function getStatToMonth($units = 1, $monthNumber = 1)
     {
@@ -31,7 +53,7 @@ abstract class CalculatorService
                 30;
             $monthlyRevenue = $bitcoins * Yii::$app->calculator->getExchangeRate() * pow(
                     1 + $this->conversionIncrease, $month);
-            $monthPower = $this->hostingFees*24*30/100;
+            $monthPower = $this->hostingFees * 24 * 30 / 100;
             $monthlyCost = $monthlyRevenue * $this->poolFees + $monthPower * $this->powerWatt * $units / 1000;
             $profit = $monthlyRevenue - $monthlyCost;
 

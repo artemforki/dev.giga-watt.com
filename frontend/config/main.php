@@ -85,6 +85,8 @@ return [
             'rules' => [
                 'exchange-rate' => 'site/bitcoin-cost',
                 'calculate' => 'site/calculate',
+                'calculations/<data:.+>' => 'site/calculation-pdf',
+                'order' => 'site/order'
             ],
         ],
     ],

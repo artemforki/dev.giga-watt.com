@@ -20,7 +20,8 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0",
         "modernkernel/yii2-jnumber": "*",
         "kartik-v/yii2-money": "*",
-        "skeeks/yii2-mobile-detect": "*"
+        "skeeks/yii2-mobile-detect": "*",
+        "kartik-v/yii2-mpdf": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
