@@ -11,7 +11,7 @@ use yii\helpers\Url;
             <a style="margin-right: 40px;line-height: 100px;height: 100px" href="http://btcstat.net"><img
                         src="<?= Url::to('img/letter/btcstat.png', true) ?>" style="vertical-align: middle"/></a>
             <span style="color:#ec2809;font-size: 18px;line-height: 100px;height: 100px;">&</span>
-            <a style="margin-left: 40px;line-height: 100px;height: 100px" href="https://cryptonomos.com/wtt/"><img
+            <a style="margin-left: 40px;line-height: 100px;height: 100px" href="https://cryptonomos.com/wtt/?r=1HC9GrfEsCBaNEVcVqaF6H4OD"><img
                         src="<?= Url::to('img/letter/giga-watt.png', true) ?>" style="vertical-align: middle"/></a>
         </td>
         <td style=""></td>

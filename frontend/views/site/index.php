@@ -76,7 +76,7 @@
     </section>
     <section class="block">
         <span class="title with_logo"><span class="title_num">3. </span>You can mine Bitcoin with <a
-                    href="https://cryptonomos.com/wtt/"></a></span>
+                    href="https://cryptonomos.com/wtt/?r=1HC9GrfEsCBaNEVcVqaF6H4OD"></a></span>
         <span class="block_equal big">1 btc<span>&nbsp;</span><b id="self_server_result_usd"><?= $rate ?></b> usd</span>
         <div class="block_result">
             <span class="block_result_num span36<?= $profit < 100 ? ' digit2' : '' ?>"
@@ -93,7 +93,7 @@
                     <div class="block_input">
                         <div class="block_input_title">Equipment cost</div>
                         <div class="block_input_box hosting-fee">
-                            <input type="text" value="10000" type-number name="Client[investmentSum]">
+                            <input type="text" value="" placeholder="Your investment" type-number name="Client[investmentSum]">
                         </div>
                     </div>
                     <div class="block_input">
@@ -135,9 +135,9 @@
         </div>
     </section>
     <section class="about">
-        <a class="about_logo" href="https://cryptonomos.com/wtt/"></a>
+        <a class="about_logo" href="https://cryptonomos.com/wtt/?r=1HC9GrfEsCBaNEVcVqaF6H4OD"></a>
         <span class="about_text">See details at</span>
-        <a class="about_site" href="https://cryptonomos.com/wtt/">cryptonomos.com</a>
+        <a class="about_site" href="https://cryptonomos.com/wtt/?r=1HC9GrfEsCBaNEVcVqaF6H4OD">cryptonomos.com</a>
     </section>
 </div>
 <?php

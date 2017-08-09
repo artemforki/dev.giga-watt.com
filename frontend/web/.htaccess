@@ -2,6 +2,22 @@ Options +FollowSymLinks
 IndexIgnore */*
 RewriteEngine on
 
+#set an environtment variable "auth" if the request starts with "/en"
+SetEnvIf Request_URI ^/admin/ auth=1
+
+AuthName "Please login to access english part"
+AuthType Basic
+AuthUserFile "/home/.htpasswd"
+
+# first, allow everybody
+Order Allow,Deny
+Satisfy any
+Allow from all
+Require valid-user
+# then, deny only if required
+Deny from env=auth
+
+
 RewriteCond %{HTTPS} off
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^(.*)$ http://%1/$1 [R=301,L]

@@ -99,12 +99,12 @@ use Yii;
                     <tr>
                         <td> Difficulty increase
                         </td>
-                        <td><?= number_format($server->difficultyIncrease, 0, '.', ',') ?>%</td>
+                        <td><?= number_format($server->difficultyIncrease*100, 0, '.', ',') ?>%</td>
                     </tr>
                     <tr>
                         <td>Conversion increase
                         </td>
-                        <td><?= number_format($server->conversionIncrease, 0, '.', ',') ?>%</td>
+                        <td><?= number_format($server->conversionIncrease*100, 0, '.', ',') ?>%</td>
                     </tr>
                     <tr>
                         <td> Pool Fees

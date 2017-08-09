@@ -36,6 +36,7 @@ class SiteController extends Controller
         ];
     }
 
+
     /**
      * Displays homepage.
      *
@@ -153,31 +154,28 @@ class SiteController extends Controller
                 $data['hash'] = md5(json_encode($data) . Yii::$app->params['keyDownloadPdf']);
                 $data = base64_encode(json_encode($data));
                 $url = \yii\helpers\Url::toRoute(['site/calculation-pdf', 'data' => $data], true);
+                try {
+                    Yii::$app->db->createCommand(
+                        "INSERT formMail(email,investments,createdAt) SELECT '$email', $inv, NOW()")
+                                 ->execute();
+                } catch (\Exception  $exception) {
+
+                }
                 Yii::$app->mailer->compose(
                     ['html' => 'finance-information'], ['invest' => $inv, 'email' => $email, 'download_url' => $url])
                                  ->setFrom([Yii::$app->params['infoEmail'] => Yii::$app->name])
                                  ->setTo($email)
                                  ->setSubject('Financial model')
                                  ->send();
+                Yii::$app->mailer->compose(
+                    ['html' => 'finance-information'], ['invest' => $inv, 'email' => $email, 'download_url' => $url])
+                                 ->setFrom([Yii::$app->params['infoEmail'] => Yii::$app->name])
+                                 ->setTo(Yii::$app->params['infoEmail'])
+                                 ->setSubject('Запрос финансовой модели от пользователя: ' . $email)
+                                 ->send();
 
             }
         }
     }
 
-    public function actionTest()
-    {
-        echo Yii::$app->params['infoEmail'];
-        //mail(Yii::$app->params['supportEmail'], 'test', 'test');
-        $data = ['invest' => 3000, 'email' => 'asd'];
-        $data['hash'] = md5(json_encode($data) . Yii::$app->params['keyDownloadPdf']);
-        $data = base64_encode(json_encode($data));
-        $url = \yii\helpers\Url::toRoute(['site/calculation-pdf', 'data' => $data], true);
-        Yii::$app->mailer->compose(
-            ['html' => 'finance-information'], ['invest' => 3000, 'email' => 'sdadasd', 'download_url' => $url])
-                         ->setFrom([Yii::$app->params['infoEmail'] => Yii::$app->name])
-                         ->setTo(Yii::$app->params['supportEmail'])
-                         ->setSubject('Финансовая модель')
-                         ->send();
-
-    }
 }

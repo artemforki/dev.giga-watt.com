@@ -54,7 +54,7 @@ class Calculator extends Component
 
         $group = [];
         foreach ($this->exchangeRateURLs as $name => $url) {
-            $content = file_get_contents($url);
+            $content = @file_get_contents($url);
             preg_match('#>' . $this->currency . '.+?num">([\d,\.]+)\s+' . $currency . '#si', $content, $match);
             if (isset($match[1])) {
                 $rate = (float)str_replace(',', '', $match[1]);
@@ -72,7 +72,7 @@ class Calculator extends Component
                 }
             }
         }
-        if ($group === [] && $history !== false) {
+        if ($group === [] && $history !== false || count($group) < 6 && $history !== false) {
             $data = $history;
             $data['ts'] = time() + 24 * 3600;
         } else {
@@ -91,7 +91,7 @@ class Calculator extends Component
     {
         $key = md5('Bitcoin Difficulty');
         if (($difficulty = Yii::$app->fileCache->get($key)) === false) {
-            $data = file_get_contents('https://bitcoinwisdom.com/bitcoin/difficulty');
+            $data = @file_get_contents('https://bitcoinwisdom.com/bitcoin/difficulty');
             if (!empty($data)) {
                 $difficulty = (int)str_replace(
                     ',', '', preg_replace('/.+?Bitcoin Difficulty:[^,\d]+([,\d]+).+/is', '$1', $data));
